@@ -1,0 +1,13 @@
+[package]
+name = "solana-shmem-bridge"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+# Keep cdylib for plugin loading, add rlib so binaries can link to this crate.
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+# Agave (Solana 3.x) uses agave-geyser-plugin-interface
+agave-geyser-plugin-interface = "3.1"
+shared_memory = "0.12"
